@@ -6,7 +6,9 @@ image::https://img.shields.io/:license-Apache%202.0-red.svg[]
 
 Android simple view styler.
 StyleR will save you from coding same view because of little style differences.
-Now you can code the view once and use it with different looks.
+Now you can code the view once and use it with different looks. Set different styles to your view with a line of code!
+
+image::images/styler.gif[200,300]
 
 ## HOW IT WORKS
 
@@ -125,10 +127,12 @@ StyleR.applyStyle(binding.root, "${javaClass.simpleName}${AppStatics.appColor.ke
 // StyleR.applyStyle(binding.root, "SimpleView.Blackout")
 ```
 
-### What I Need to Add?
+### What Do You Can Add?
 
-StyleR comes with function which is each developer contribute by their own functions from their modules. So what is it?
+StyleR comes with function which is each developer contribute by their own functions for their modules. So what is it?
 By StyleR view setter scoped functions you will get the same view & property map which is StyleR has got. So you can apply your own 
 styler from there.
 
 link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/AppStyleR.kt[See the example.]
+
+Please see sample app module to understand how it using.
