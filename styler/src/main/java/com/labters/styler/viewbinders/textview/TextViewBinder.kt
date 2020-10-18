@@ -1,3 +1,12 @@
+/*
+ * *
+ *  * Created by Ali YUCE on 10/18/20 9:16 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 10/15/20 11:16 PM
+ *  * GitHub: https://github.com/mayuce
+ *
+ */
+
 package com.labters.styler.viewbinders.textview
 
 import android.content.res.ColorStateList

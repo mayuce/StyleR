@@ -1,3 +1,12 @@
+/*
+ * *
+ *  * Created by Ali YUCE on 10/18/20 9:18 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 10/18/20 9:18 PM
+ *  * GitHub: https://github.com/mayuce
+ *
+ */
+
 package com.labters.styler.core
 
 import android.view.View

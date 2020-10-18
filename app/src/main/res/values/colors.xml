@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Ali YUCE on 10/18/20 9:16 PM
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 10/8/20 9:17 PM
+  ~  * GitHub: https://github.com/mayuce
+  ~  */
+  -->
+
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>

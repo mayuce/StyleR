@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Ali YUCE on 10/18/20 9:16 PM
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 10/15/20 10:12 PM
+  ~  * GitHub: https://github.com/mayuce
+  ~  */
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.labters.stylerdemo">
 
