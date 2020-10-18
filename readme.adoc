@@ -5,7 +5,9 @@ image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
 image::https://img.shields.io/:license-Apache%202.0-red.svg[]
 
 StyleR provides styling features which is can *changeable in runtime*, *downloadable* from remote & more.
+
 StyleR will save you from coding same view because of little style differences.
+
 Now you can code the view once and use it with different looks. Set different styles to your view with a line of code!
 
 image::images/styler.gif[200,300]
@@ -130,7 +132,7 @@ First you have to add the lines below in your module which you'll apply StyleR (
 ```bourne
 dependecies {
 ...
-implementation 'com.labters:styler:1.0.0'
+implementation 'com.github.mayuce:StyleR:1.0.0'
 ...
 }
 ```
