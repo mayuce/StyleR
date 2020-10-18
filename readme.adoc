@@ -1,0 +1,134 @@
+# StyleR
+
+image::https://img.shields.io/badge/version-1.0.0-green.svg[]
+image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
+image::https://img.shields.io/:license-Apache%202.0-red.svg[]
+
+Android simple view styler.
+StyleR will save you from coding same view because of little style differences.
+Now you can code the view once and use it with different looks.
+
+## HOW IT WORKS
+
+StyleR has it's own merger plugin, when you're coding the view you will create *style.json* for the view. This style.json basically looks like:
+
+```bourne
+{
+  "SampleView": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText",
+      "textSize": 12,
+      "textColor": "red"
+    },
+    {
+      "id": "iv_header",
+      "elevation": 8
+    }
+  ]
+}
+```
+
+First key is the name of style for the view. You can create endless different styles for your view. The value of the key is list of maps.
+Each member of this list represents the child views of the parent view group. You must provide each view with its ID and set the properties which is
+you would like to add your view by StyleR. Let the StyleR does its job then :)
+
+## HOW TO ADD YOUR PROJECT
+
+### StyleR Dependencies
+
+StyleR needs three different maps which is provided by your application. These maps are:
+
+* *View StyleR Map*: This is the map which is contains all of your styles. StyleR provides a plugin to merge all of your styles or if you want to download
+it from remote source you can provide that value comes from remote server too.
+
+* *Styles Map*: StyleR has its own style processor. This makes the things easier as Android. Think that you're declaring HeaderTextViewStyle in styles.xml. It works
+the same way as Android. You can provide it from local or remote as view styler map.
+
+* *Colors Map*: This works as Androids colors.xml as styles map and you can provide it from local or remote as view styler map too.
+
+### StyleR Implementation
+
+First you have to add the lines below in your module which you'll apply StyleR (app or if you have components module for example).
+
+```bourne
+dependecies {
+...
+implementation 'com.labters:styler:1.0.0'
+...
+}
+```
+
+Then add plugin configurations to same build.gradle file by folloing the below lines.
+
+```bourne
+apply plugin: 'com.labters.styler.stylerplugin'
+styleRConfig {
+    styleRMerger {
+        directories = ["$projectDir/src/main/java/<DIRECTORY PATH COMES HERE FOR EX.>", "You can add more than one directory and it doesn't have to be in project dir."]
+        includeSubFolders = true // or false whatever you need
+        exportDirectory = "$projectDir/src/main/res/raw" // See StyleR Demo app module to understand this.
+    }
+}
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "com.labters.styler:styler-plugin:1.0.0"
+    }
+}
+```
+
+Now you are ready to define your styles and make your app less coded and more fancy look from others!
+
+### Initializing The StyleR
+
+To initialize StyleR go to your Application class and call StyleR.initialize function. The code shown below is for calling StyleR from 
+local source. If you have download logics in your app you can call it from there or call from room etc.
+
+```kotlin
+val type = object : TypeToken<HashMap<String, List<HashMap<String, String>>>>() {}.type
+val typeBasic = object : TypeToken<HashMap<String, String>>() {}.type
+val typeStyle = object : TypeToken<HashMap<String, HashMap<String, String>>>() {}.type
+StyleRProvider.initialize(
+ Gson().fromJson(resources.getRawTextFile(R.raw.styler), type),
+ Gson().fromJson(resources.getRawTextFile(R.raw.colors), typeBasic),
+ Gson().fromJson(resources.getRawTextFile(R.raw.styles), typeStyle)
+ ) {
+    (view as? CardView)?.setStyleR(hashMap)
+    // Call your own created view binders if you have.
+ }
+```
+
+link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/AppStyleR.kt[See the example.]
+
+### Applying The StyleR
+
+You can apply StyleR each view of your module. But what I suggest is create your own views under a folder which is shown in
+link:https://github.com/mayuce/StyleR/tree/master/app/src/main/java/com/labters/stylerdemo/components/sampleview[*app module*].
+
+Apply StyleR in your BaseView class or apply it by redeclaring the function wherever you want to call as 
+
+StyleR.applyStyle(ROOT VIEW OF GROUP, NAME OF THE VIEW STYLE)
+
+```kotlin
+StyleR.applyStyle(binding.root, "${javaClass.simpleName}${AppStatics.appColor.key}")
+// THIS MEANS
+// StyleR.applyStyle(binding.root, "SimpleView")
+// StyleR.applyStyle(binding.root, "SimpleView.Dark")
+// StyleR.applyStyle(binding.root, "SimpleView.Blackout")
+```
+
+### What I Need to Add?
+
+StyleR comes with function which is each developer contribute by their own functions from their modules. So what is it?
+By StyleR view setter scoped functions you will get the same view & property map which is StyleR has got. So you can apply your own 
+styler from there.
+
+link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/AppStyleR.kt[See the example.]
