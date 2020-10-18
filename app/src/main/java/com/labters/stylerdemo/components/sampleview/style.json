@@ -8,5 +8,27 @@
       "id": "tv_description",
       "style": "AppText"
     }
+  ],
+  "SampleView.Reverse": [
+    {
+      "id": "tv_header",
+      "style": "AppText"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText.Header"
+    }
+  ],
+  "SampleView.HugeHeader": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Header",
+      "textSize": 60,
+      "textColor": "red"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText"
+    }
   ]
 }
