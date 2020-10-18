@@ -1,0 +1,14 @@
+{
+  "SimpleButtonView.Dark": [
+    {
+      "id": "btn_simple",
+      "style": "RedButton.Dark"
+    }
+  ],
+  "SimpleButtonView.Blackout": [
+    {
+      "id": "btn_simple",
+      "style": "RedButton.Dark"
+    }
+  ]
+}

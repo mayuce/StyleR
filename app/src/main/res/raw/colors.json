@@ -1,0 +1,11 @@
+{
+  "red": "#ffff0000",
+  "green": "#ff00ff00",
+  "blue": "#ff0000ff",
+  "white": "#ffffff",
+  "black": "#000000",
+  "transparent": "#00ffffff",
+  "bgColor": "#ffffff",
+  "bgDarkColor": "#ff121212",
+  "bgBlackoutColor": "#000000"
+}

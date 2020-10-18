@@ -1,0 +1,78 @@
+{
+
+  "SimpleButtonView.Dark": [
+    {
+      "id": "btn_simple",
+      "style": "RedButton.Dark"
+    }
+  ],
+  "SimpleButtonView.Blackout": [
+    {
+      "id": "btn_simple",
+      "style": "RedButton.Dark"
+    }
+  ]
+,
+
+  "SimpleButtonView": [
+    {
+      "id": "btn_simple",
+      "style": "RedButton"
+    }
+  ]
+,
+
+  "SampleView.Dark": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Dark.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText.Dark"
+    }
+  ],
+  "SampleView.Blackout": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Dark.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText.Dark"
+    }
+  ]
+,
+
+  "SampleView": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText"
+    }
+  ]
+,
+
+  "AppTheme": [
+    {
+      "id": "container",
+      "backgroundColor": "bgColor"
+    }
+  ],
+  "AppTheme.Dark": [
+    {
+      "id": "container",
+      "backgroundColor": "bgDarkColor"
+    }
+  ],
+  "AppTheme.Blackout": [
+    {
+      "id": "container",
+      "backgroundColor": "bgBlackoutColor"
+    }
+  ]
+
+}

@@ -1,0 +1,32 @@
+{
+  "RedButton": {
+    "textColor": "black",
+    "pressedTextColor": "red",
+    "disabledTextColor": "blue",
+    "backgroundColor": "black",
+    "pressedBackgroundColor": "red",
+    "disabledBackgroundColor": "blue",
+    "backgroundRadius": 8,
+    "backgroundBorderWidth": 2
+  },
+  "RedButton.Dark": {
+    "textColor": "white",
+    "backgroundColor": "white"
+  },
+  "AppText": {
+    "textColor": "black",
+    "fontName": "sf_regular.otf",
+    "textSize": 12
+  },
+  "AppText.Dark": {
+    "textColor": "white"
+  },
+  "AppText.Header": {
+    "fontName": "sf_bold.otf",
+    "textSize": 18
+  },
+  "AppText.Dark.Header": {
+    "fontName": "sf_bold.otf",
+    "textSize": 18
+  }
+}

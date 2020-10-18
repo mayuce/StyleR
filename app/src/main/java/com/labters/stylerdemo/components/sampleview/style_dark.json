@@ -1,0 +1,22 @@
+{
+  "SampleView.Dark": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Dark.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText.Dark"
+    }
+  ],
+  "SampleView.Blackout": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Dark.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText.Dark"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "SimpleButtonView": [
+    {
+      "id": "btn_simple",
+      "style": "RedButton"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "SampleView": [
+    {
+      "id": "tv_header",
+      "style": "AppText.Header"
+    },
+    {
+      "id": "tv_description",
+      "style": "AppText"
+    }
+  ]
+}

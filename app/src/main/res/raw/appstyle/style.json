@@ -1,0 +1,20 @@
+{
+  "AppTheme": [
+    {
+      "id": "container",
+      "backgroundColor": "bgColor"
+    }
+  ],
+  "AppTheme.Dark": [
+    {
+      "id": "container",
+      "backgroundColor": "bgDarkColor"
+    }
+  ],
+  "AppTheme.Blackout": [
+    {
+      "id": "container",
+      "backgroundColor": "bgBlackoutColor"
+    }
+  ]
+}
