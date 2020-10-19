@@ -4,110 +4,31 @@ image::https://img.shields.io/badge/version-1.0.0-green.svg[]
 image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
 image::https://img.shields.io/:license-Apache%202.0-red.svg[]
 
-StyleR provides styling features which is can *changeable in runtime*, *downloadable* from remote & more.
+StyleR allows developer to set view styles programatically. Thus developer can create many style for one view, it allows developer to implement download styles from remote data source and change app style in runtime.
 
 StyleR will save you from coding same view because of little style differences.
 
-Now you can code the view once and use it with different looks. Set different styles to your view with a line of code!
+Now you can code the view once and use it for different looks. Set different styles to your view with a line of code!
+
+See link:https://github.com/mayuce/StyleR/wiki[Wiki Page] to understand more.
+
+## Styling The Views
+
+Sample app shows how to use StyleR for different app themes (Light, Dark, Blackout) and Styling one view for many view.
+
+* App Theme
+
+You can change app theme without restarting you activity.
 
 image::images/styler.gif[200,300]
 
-## HOW IT WORKS
+* 1 View to Many View
 
-StyleR has it's own merger plugin, when you're coding the view you will create *style.json* for the view. This style.json basically looks like:
-
-```bourne
-{
-  "SampleView": [
-    {
-      "id": "tv_header",
-      "style": "AppText.Header"
-    },
-    {
-      "id": "tv_description",
-      "style": "AppText",
-      "textSize": 12,
-      "textColor": "red"
-    },
-    {
-      "id": "iv_header",
-      "elevation": 8
-    }
-  ]
-}
-```
-
-First key is the name of style for the view. You can create endless different styles for your view. The value of the key is list of maps.
-Each member of this list represents the child views of the parent view group. You must provide each view with its ID and set the properties which is
-you would like to add your view by StyleR. Let the StyleR does its job then :)
-
-
-### Styling
-
-Sample app shows how to use StyleR for different app themes (Light, Dark, Blackout). But you can use StyleR for any purpose. 
-For example you can see below view.
-
-image::images/sample_view.png[500,900]
-
-This view represents our link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/components/sampleview/SampleView.kt[SampleView] class layout file. We want to change this view look but to do it we have to manually add the code which sets each of view to how it looks. StyleR comes from here.
-You only just calling StyleR with given theme and StyleR does the rest of it.
-
-Here is the SampleView styles:
-
-```bourne
-{
-  "SampleView": [
-    {
-      "id": "tv_header",
-      "style": "AppText.Header"
-    },
-    {
-      "id": "tv_description",
-      "style": "AppText"
-    }
-  ],
-  "SampleView.Reverse": [
-    {
-      "id": "tv_header",
-      "style": "AppText"
-    },
-    {
-      "id": "tv_description",
-      "style": "AppText.Header"
-    }
-  ],
-  "SampleView.HugeHeader": [
-    {
-      "id": "tv_header",
-      "style": "AppText.Header",
-      "textSize": 60,
-      "textColor": "red"
-    },
-    {
-      "id": "tv_description",
-      "style": "AppText"
-    }
-  ]
-}
-```
-
-And here how it looks each of styles:
-
-*SampleView*
-
-image::images/theme_0.jpg[200,300]
-
-*SampleView.Reverse*
-
-image::images/theme_1.jpg[200,300]
-
-*SampleView.HugeHeader*
-
-image::images/theme_2.jpg[200,300]
-
-And link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/components/sampleview/SampleView.kt[Here] is how it works from the code
+Simply it provides setting view styles programmatically
 
 image::images/styler_sample.gif[200,300]
+
+link:https://github.com/mayuce/StyleR/wiki/Styling-The-Views[See Styling The Views wiki to understand].
 
 ## HOW TO ADD YOUR PROJECT
 
@@ -127,19 +48,32 @@ link:https://github.com/mayuce/StyleR/blob/master/app/src/main/res/raw/colors.js
 
 ### StyleR Implementation
 
-First you have to add the lines below in your module which you'll apply StyleR (app or if you have components module for example).
+Add these lines to your project:
 
-```bourne
+Project level link:https://github.com/mayuce/StyleR/blob/master/build.gradle[build.gradle]
+```java
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+In your module which you'll apply StyleR (app or if you have components module for example).
+
+App level link:https://github.com/mayuce/StyleR/blob/master/app/build.gradle[build.gradle]
+```java
 dependecies {
 ...
-implementation 'com.github.mayuce:StyleR:1.0.0'
+implementation 'com.github.mayuce:StyleR:1.0.1'
 ...
 }
 ```
 
 Then add plugin configurations to same build.gradle file by folloing the below lines.
 
-```bourne
+```java
 apply plugin: 'com.labters.styler.stylerplugin'
 styleRConfig {
     styleRMerger {
@@ -154,7 +88,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath "com.labters.styler:styler-plugin:1.0.0"
+        classpath "com.labters.styler.stylerplugin:stylertask:1.0.0"
     }
 }
 ```
@@ -200,7 +134,7 @@ StyleR.applyStyle(binding.root, "${javaClass.simpleName}${AppStatics.appColor.ke
 // StyleR.applyStyle(binding.root, "SimpleView.Blackout")
 ```
 
-### What Can You Add?
+## What Else Can You Add?
 
 StyleR comes with function which is each developer contribute by their own functions for their modules. So what is it?
 By StyleR view setter scoped functions you will get the same view & property map which is StyleR has got. So you can apply your own 
@@ -208,38 +142,10 @@ styler from there.
 
 link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/AppStyleR.kt[See the example.]
 
-Please see sample app module to understand how it using.
+Please see sample app module to understand how it using or link:https://github.com/mayuce/StyleR/wiki/Attributes[see Attributes wiki].
 
-### StyleR Included Attributes
+## StyleR Attributes
 
-* Any View:
+link:https://github.com/mayuce/StyleR/wiki/Attributes[See Attributes wiki].
 
-```bourne
-"style": Style name which provides by styles.json
-"backgroundColor": View background color from colors.json
-"pressedBackgroundColor": View pressed background color from colors.json
-"disabledBackgroundColor": View disabled background color from colors.json
-"backgroundRadius": View background corner radius in dp
-"backgroundBorderWidth": View border width in dp
-"elevation": View elevation in dp
-```
 
-* Any View extends *Text View* (You can use for buttons too):
-
-```bourne
-"style": Style name which provides by styles.json
-"textSize": Text size in sp
-"fontName": Font name which is under assets folder
-"textColor": Text color from colors.json
-"disabledTextColor": Disabled text color from colors.json
-"pressedTextColor": Pressed text color from colors.json
-```
-
-* Button:
-
-```bourne
-"style": Style name which provides by styles.json
-```
-
-You can add more view binders as shown in the sample app. link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/CardViewBinder.kt[See the example.]
-link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/AppStyleR.kt[Example usage.]
