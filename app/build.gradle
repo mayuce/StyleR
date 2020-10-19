@@ -88,7 +88,7 @@ dependencies {
 
     implementation 'androidx.cardview:cardview:1.0.0'
 
-    implementation project(path: ':styler')
+    implementation 'com.github.mayuce:StyleR:1.0.1'
 
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
 
