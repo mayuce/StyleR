@@ -70,10 +70,9 @@ styleRConfig {
 buildscript {
     repositories {
         gradlePluginPortal()
-        mavenLocal()
     }
     dependencies {
-        classpath "com.labters.styler:styler-plugin:1.0.0"
+        classpath "com.labters.styler.stylerplugin:stylertask:1.0.0"
     }
 }
 
