@@ -18,13 +18,13 @@ Sample app shows how to use StyleR for different app themes (Light, Dark, Blacko
 
 * App Theme
 
-You can change app theme without restarting you activity.
+You can change app theme without restarting the activity.
 
 image::images/styler.gif[200,300]
 
 * 1 View to Many View
 
-Simply it provides setting view styles programmatically
+Simply StyleR allows you to set view styles programmatically.
 
 image::images/styler_sample.gif[200,300]
 
@@ -83,6 +83,7 @@ styleRConfig {
     }
 }
 
+// or you can add to top level gradle
 buildscript {
     repositories {
         gradlePluginPortal()
@@ -121,6 +122,9 @@ link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/
 
 You can apply StyleR each view of your module. But what I suggest is create your own views under a folder which is shown in
 link:https://github.com/mayuce/StyleR/tree/master/app/src/main/java/com/labters/stylerdemo/components/sampleview[*app module*].
+
+After creating your styles, click make to project and it'll export styler.json resource to defined export directory. StyleR plug-in creates this
+styler.json file. If you don't have any json file the plugin will fail your build.
 
 Apply StyleR in your BaseView class or apply it by redeclaring the function wherever you want to call as 
 
