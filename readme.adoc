@@ -1,6 +1,6 @@
 # StyleR
 
-image::https://img.shields.io/badge/version-1.0.2-green.svg[]
+image::https://img.shields.io/badge/version-1.0.3-green.svg[]
 image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
 image::https://img.shields.io/:license-Apache%202.0-red.svg[]
 
@@ -66,7 +66,7 @@ App level link:https://github.com/mayuce/StyleR/blob/master/app/build.gradle[bui
 ```java
 dependecies {
 ...
-implementation 'com.github.mayuce:StyleR:1.0.2'
+implementation 'com.github.mayuce:StyleR:1.0.3'
 ...
 }
 ```
