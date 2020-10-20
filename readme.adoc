@@ -18,13 +18,13 @@ Sample app shows how to use StyleR for different app themes (Light, Dark, Blacko
 
 * App Theme
 
-You can change app theme without restarting you activity.
+You can change app theme without restarting the activity.
 
 image::images/styler.gif[200,300]
 
 * 1 View to Many View
 
-Simply it allows you to set view styles programmatically
+Simply StyleR allows you to set view styles programmatically.
 
 image::images/styler_sample.gif[200,300]
 
