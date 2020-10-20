@@ -17,7 +17,9 @@
   "SimpleButtonView": [
     {
       "id": "btn_simple",
-      "style": "RedButton"
+      "style": "RedButton",
+      "paddingStart": 10,
+      "paddingEnd": 10
     }
   ]
 ,
@@ -51,7 +53,8 @@
     },
     {
       "id": "tv_description",
-      "style": "AppText"
+      "style": "AppText",
+      "marginTop": 32
     }
   ],
   "SampleView.Reverse": [
@@ -61,7 +64,8 @@
     },
     {
       "id": "tv_description",
-      "style": "AppText.Header"
+      "style": "AppText.Header",
+      "marginTop": 16
     }
   ],
   "SampleView.HugeHeader": [
@@ -73,7 +77,8 @@
     },
     {
       "id": "tv_description",
-      "style": "AppText"
+      "style": "AppText",
+      "marginTop": 0
     }
   ]
 ,

@@ -6,7 +6,8 @@
     },
     {
       "id": "tv_description",
-      "style": "AppText"
+      "style": "AppText",
+      "marginTop": 32
     }
   ],
   "SampleView.Reverse": [
@@ -16,7 +17,8 @@
     },
     {
       "id": "tv_description",
-      "style": "AppText.Header"
+      "style": "AppText.Header",
+      "marginTop": 16
     }
   ],
   "SampleView.HugeHeader": [
@@ -28,7 +30,8 @@
     },
     {
       "id": "tv_description",
-      "style": "AppText"
+      "style": "AppText",
+      "marginTop": 0
     }
   ]
 }

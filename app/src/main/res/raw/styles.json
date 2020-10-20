@@ -6,6 +6,7 @@
     "backgroundColor": "black",
     "pressedBackgroundColor": "red",
     "disabledBackgroundColor": "blue",
+    "textAllCaps": false,
     "backgroundRadius": 8,
     "backgroundBorderWidth": 2
   },

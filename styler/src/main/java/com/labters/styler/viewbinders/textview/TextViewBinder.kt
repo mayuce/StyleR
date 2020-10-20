@@ -16,13 +16,14 @@ import android.widget.TextView
 import com.labters.styler.StyleRProvider
 
 @Suppress("MemberVisibilityCanBePrivate")
-class TextViewBinder {
+internal class TextViewBinder {
 
     companion object {
         const val NO_COLOR = "#00000000"
 
         const val ATTR_STYLE = "style"
         const val ATTR_TEXT_SIZE = "textSize"
+        const val ATTR_TEXT_ALL_CAPS = "textAllCaps"
         const val ATTR_FONT_NAME = "fontName"
         const val ATTR_TEXT_COLOR = "textColor"
         const val ATTR_DISABLED_TEXT_COLOR = "disabledTextColor"
@@ -34,6 +35,7 @@ class TextViewBinder {
                 StyleRProvider.getStyle(it)?.let { style -> setStyleR(style) }
             }
             map[ATTR_TEXT_SIZE]?.toFloatOrNull()?.let { textSize = it }
+            map[ATTR_TEXT_ALL_CAPS]?.toBoolean()?.let { isAllCaps = it }
             map[ATTR_FONT_NAME]?.let {
                 typeface = Typeface.createFromAsset(context.assets, "$FONTS_PATH$it")
             }

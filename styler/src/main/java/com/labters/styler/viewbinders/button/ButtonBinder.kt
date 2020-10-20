@@ -13,7 +13,7 @@ import android.widget.Button
 import com.labters.styler.StyleRProvider
 
 @Suppress("MemberVisibilityCanBePrivate")
-class ButtonBinder {
+internal class ButtonBinder {
 
     companion object {
         const val ATTR_STYLE = "style"

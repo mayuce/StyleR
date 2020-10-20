@@ -13,11 +13,6 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_simple"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:paddingStart="12dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="0dp"
-        android:text="I'm Simple BUTTON"
-        android:textAllCaps="false" />
+        android:layout_height="wrap_content"
+        android:text="I'm Simple BUTTON" />
 </layout>

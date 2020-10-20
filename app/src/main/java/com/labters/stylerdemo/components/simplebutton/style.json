@@ -2,7 +2,9 @@
   "SimpleButtonView": [
     {
       "id": "btn_simple",
-      "style": "RedButton"
+      "style": "RedButton",
+      "paddingStart": 10,
+      "paddingEnd": 10
     }
   ]
 }
