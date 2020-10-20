@@ -133,13 +133,13 @@ internal class ViewBinder {
             shape.shape = GradientDrawable.RECTANGLE
             shape.cornerRadius = r
             val states = arrayOf(
-                intArrayOf(-android.R.attr.state_pressed),
                 intArrayOf(-android.R.attr.state_enabled),
+                intArrayOf(-android.R.attr.state_pressed),
                 intArrayOf(android.R.attr.state_pressed)
             )
             val colors = intArrayOf(
-                colorInt,
                 disabled,
+                colorInt,
                 pressed
             )
             borderWidth?.let {
