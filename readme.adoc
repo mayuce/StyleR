@@ -152,4 +152,6 @@ Please see sample app module to understand how it using or link:https://github.c
 
 link:https://github.com/mayuce/StyleR/wiki/3.-Attributes[See Attributes wiki].
 
+If you liked my work please don't forget to *endorse* me from link:https://www.linkedin.com/in/mayuce[LinkedIn]
+
 
