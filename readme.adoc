@@ -1,4 +1,4 @@
-# StyleR
+image::images/logo.png[]
 
 image::https://img.shields.io/badge/version-1.0.3-green.svg[]
 image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
