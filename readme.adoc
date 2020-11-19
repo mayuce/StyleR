@@ -1,6 +1,6 @@
-# StyleR
+image::images/logo.png[]
 
-image::https://img.shields.io/badge/version-1.0.2-green.svg[]
+image::https://img.shields.io/badge/version-1.0.3-green.svg[]
 image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
 image::https://img.shields.io/:license-Apache%202.0-red.svg[]
 
@@ -28,7 +28,7 @@ Simply StyleR allows you to set view styles programmatically.
 
 image::images/styler_sample.gif[200,300]
 
-link:https://github.com/mayuce/StyleR/wiki/Styling-The-Views[See Styling The Views wiki to understand].
+link:https://github.com/mayuce/StyleR/wiki/2.-Styling-The-Views[See Styling The Views wiki to understand].
 
 ## HOW TO ADD YOUR PROJECT
 
@@ -66,7 +66,7 @@ App level link:https://github.com/mayuce/StyleR/blob/master/app/build.gradle[bui
 ```java
 dependecies {
 ...
-implementation 'com.github.mayuce:StyleR:1.0.2'
+implementation 'com.github.mayuce:StyleR:1.0.3'
 ...
 }
 ```
@@ -146,10 +146,12 @@ styler from there.
 
 link:https://github.com/mayuce/StyleR/blob/master/app/src/main/java/com/labters/stylerdemo/styler/AppStyleR.kt[See the example.]
 
-Please see sample app module to understand how it using or link:https://github.com/mayuce/StyleR/wiki/Attributes[see Attributes wiki].
+Please see sample app module to understand how it using or link:https://github.com/mayuce/StyleR/wiki/3.-Attributes[see Attributes wiki].
 
 ## StyleR Attributes
 
-link:https://github.com/mayuce/StyleR/wiki/Attributes[See Attributes wiki].
+link:https://github.com/mayuce/StyleR/wiki/3.-Attributes[See Attributes wiki].
+
+If you liked my work please don't forget to *endorse* me from link:https://www.linkedin.com/in/mayuce[LinkedIn]
 
 
