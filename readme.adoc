@@ -1,6 +1,6 @@
 image::images/logo.png[]
 
-image::https://img.shields.io/badge/version-1.0.3-green.svg[]
+image::https://img.shields.io/badge/version-1.0.4-green.svg[]
 image::https://img.shields.io/badge/minSDK-16-yellow.svg[]
 image::https://img.shields.io/:license-Apache%202.0-red.svg[]
 
