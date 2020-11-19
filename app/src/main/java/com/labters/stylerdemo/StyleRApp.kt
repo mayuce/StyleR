@@ -16,6 +16,6 @@ class StyleRApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        AppStyleR().initialize(resources)
+        AppStyleR().initialize(this)
     }
 }

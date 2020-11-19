@@ -21,7 +21,7 @@ open class StyleRProvider {
 
         private var viewStyleRProvider: HashMap<String, List<HashMap<String, String>>>? = null
 
-        private var colorProvider: HashMap<String, String>? = null
+        private var colorProvider: ((colorKey: String?) -> Int?)? = null
 
         private var stylesProvider: HashMap<String, HashMap<String, String>>? = null
 
@@ -34,7 +34,7 @@ open class StyleRProvider {
          */
         fun initialize(
             viewStyleRProvider: HashMap<String, List<HashMap<String, String>>>?,
-            colorProvider: HashMap<String, String>?,
+            colorProvider: ((colorKey: String?) -> Int?)?,
             stylesProvider: HashMap<String, HashMap<String, String>>?,
             viewSetter: ((view: View, map: HashMap<String, String>) -> Unit)? = null
         ) {
@@ -85,7 +85,7 @@ open class StyleRProvider {
          * Provides the color from colorProvider map with given key
          * @param key: Color Key
          */
-        fun getColor(key: String?) = colorProvider?.get(key)
+        fun getColor(key: String?) = colorProvider?.invoke(key)
 
         /**
          * Provides the style from stylesProvider map with given key

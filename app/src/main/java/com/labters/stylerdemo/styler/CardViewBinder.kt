@@ -21,7 +21,7 @@ class CardViewBinder {
 
         fun CardView.setStyleR(map: HashMap<String, String>) {
             StyleRProvider.getColor(map[ATTR_CARD_BACKGROUND_COLOR])?.let {
-                setCardBackgroundColor(Color.parseColor(it))
+                setCardBackgroundColor(it)
             }
             map[ATTR_CARD_ELEVATION]?.toFloatOrNull()?.let {
                 cardElevation = it

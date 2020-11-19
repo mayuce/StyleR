@@ -56,15 +56,18 @@ internal class TextViewBinder {
             disabledColor: String?,
             pressedColor: String?
         ) {
-            val colorInt = Color.parseColor(StyleRProvider.getColor(color))
+            val colorInt = StyleRProvider.getColor(color)
             val disabled =
-                Color.parseColor(StyleRProvider.getColor(disabledColor ?: color))
-            val pressed = Color.parseColor(StyleRProvider.getColor(pressedColor ?: color))
+                StyleRProvider.getColor(disabledColor ?: color)
+            val pressed = StyleRProvider.getColor(pressedColor ?: color)
             val states = arrayOf(
                 intArrayOf(-android.R.attr.state_pressed),
                 intArrayOf(-android.R.attr.state_enabled),
                 intArrayOf(android.R.attr.state_pressed)
             )
+            if (colorInt == null || disabled == null || pressed == null) {
+                return
+            }
             val colors = intArrayOf(
                 colorInt,
                 disabled,

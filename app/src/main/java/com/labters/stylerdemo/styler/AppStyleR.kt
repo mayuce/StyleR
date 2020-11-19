@@ -9,9 +9,10 @@
 
 package com.labters.stylerdemo.styler
 
-import android.content.res.Resources
+import android.content.Context
 import android.view.View
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.labters.styler.StyleRProvider
@@ -21,14 +22,23 @@ import com.labters.stylerdemo.styler.CardViewBinder.Companion.setStyleR
 
 class AppStyleR {
 
-    fun initialize(resources: Resources) {
+    fun initialize(context: Context) {
         val type = object : TypeToken<HashMap<String, List<HashMap<String, String>>>>() {}.type
-        val typeBasic = object : TypeToken<HashMap<String, String>>() {}.type
         val typeStyle = object : TypeToken<HashMap<String, HashMap<String, String>>>() {}.type
+        val colorPicker: (colorKey: String?) -> Int? = { colorKey ->
+            val colors = R.color::class.java
+            colors.fields.find {
+                it.name == colorKey
+            }?.let { field ->
+                (field.get(null) as? Int)?.let {
+                    ContextCompat.getColor(context, it)
+                }
+            }
+        }
         StyleRProvider.initialize(
-            Gson().fromJson(resources.getRawTextFile(R.raw.styler), type),
-            Gson().fromJson(resources.getRawTextFile(R.raw.colors), typeBasic),
-            Gson().fromJson(resources.getRawTextFile(R.raw.styles), typeStyle)
+            Gson().fromJson(context.resources.getRawTextFile(R.raw.styler), type),
+            colorPicker,
+            Gson().fromJson(context.resources.getRawTextFile(R.raw.styles), typeStyle)
         ) { view: View, hashMap: HashMap<String, String> ->
             (view as? CardView)?.setStyleR(hashMap)
         }
